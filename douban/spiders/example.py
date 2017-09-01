@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from douban.items import DoubanItem
-#第一个example.获取豆瓣新电影排行页面数据
+
+
+# 第一个example.获取豆瓣新电影排行页面数据
 class ExampleSpider(scrapy.Spider):
     name = "example"
     allowed_domains = ["movie.douban.com"]
@@ -18,7 +20,4 @@ class ExampleSpider(scrapy.Spider):
 
             item['people'] = filter(str.isdigit, people)
 
-
             print item
-
-

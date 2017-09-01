@@ -15,3 +15,10 @@ class DoubanItem(scrapy.Item):
     date = scrapy.Field()
 
 
+class TvItem(scrapy.Item):
+    title = scrapy.Field()
+    score = scrapy.Field()
+    people = scrapy.Field()
+    year = scrapy.Field()
+
+
