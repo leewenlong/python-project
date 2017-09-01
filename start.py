@@ -1,3 +1,3 @@
 import scrapy.cmdline
 
-scrapy.cmdline.execute("scrapy crawl example".split())
+scrapy.cmdline.execute("scrapy crawl top250".split())
