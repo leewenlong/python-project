@@ -34,7 +34,7 @@ with open("emotions-reverse.csv", 'rb') as f:
 
 with open("000001-clip.csv", 'rb') as file:
     reader = csv.reader(file)
-    i = 0;
+    i = 0 # filter head
     for row in reader:
         if i == 0:
             i = 1
@@ -54,8 +54,9 @@ def drawDoubleY(x1, y1, x2, y2):
     ys2 = y2
 
     plt.gca().xaxis.set_major_formatter(mdate.DateFormatter(fmt))
-    # plt.gca().xaxis.set_major_locator(DateFormatter(fmt))
+    # plt.gca().xaxis.set_major_locator(mdate.MonthLocator())  # 以月为间隔
     fig.autofmt_xdate()
+
 
     '''中文字体设置
         1.代码中设置
@@ -70,6 +71,7 @@ def drawDoubleY(x1, y1, x2, y2):
     ax1.plot(xs1, ys1, label=u'余额宝情绪指数')
     ax1.set_ylabel(u'余额宝情绪指数', fontproperties=fontfamily)  # 硬编码设置字体
     ax1.legend(loc=2, bbox_to_anchor=(0.01, 0.90))
+
 
     ax2 = ax1.twinx()
     ax2.plot(xs2, ys2, 'r', label=u'上证指数')
